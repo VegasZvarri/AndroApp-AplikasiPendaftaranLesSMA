@@ -40,11 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
     private void doClick()
     {
-        String hasil = "";
+        String hasil = "Tidak ada Masukan";
         if (rg.getCheckedRadioButtonId()!=-1){
             RadioButton rB = (RadioButton)
                     findViewById(rg.getCheckedRadioButtonId());
             hasil = rB.getText().toString();
+        }
+        if (hasil == null){
+            tvHasil.setText("Belum memilih ");
+        }
+        else{
+            tvHasil.setText("Kelamin : "+hasil);
         }
 
         String hasil2 = " \nKelas :";
@@ -53,11 +59,26 @@ public class MainActivity extends AppCompatActivity {
         if(cb2.isChecked())hasil2+=cb2.getText()+"\n";
         if(cb3.isChecked())hasil2+=cb3.getText()+"\n";
 
+        if(hasil2.length()==startlen) hasil2+="Tidak ada\n";
+
+        if (isValid());
         String input = etinput.getText().toString();
-        tvHasil.setText("Pendaftaran Berhasil\n"+"Data anda : \n" +"Nama : "+ input+"\n" +"Kelamin : "+ hasil + hasil2+"\nUmur : "+
+        tvHasil.setText("Pendaftaran Berhasil\n"+"Data anda : \n" +"Nama : "+ input+"\n" +"Kelamin : "+ hasil + hasil2+"Umur : "+
                 spumur.getSelectedItem().toString() );
 
 
     }
 
+    private boolean isValid() {
+        boolean valid = true;
+
+        String input = etinput.getText().toString();
+        if(input.isEmpty()){
+            etinput.setError("Nama Belum Terisi");
+        }
+        else {
+            etinput.setError(null);
+        }
+        return valid;
+    }
 }
