@@ -2,6 +2,8 @@
 #Vegas Zuba'ir
 #XIIRPL3
 #35
+#SMK TELKOM MALANG
+#NIS:4289/1354.070
 Aplikasi yang saya buat yaitu AndroApp adalah aplikasi untuk pendaftaran les siswa sma/smk.
 User atau pengguna perlu memasukkan nama,kelamin,kelas(1,2,3)dan umur untuk mendaftar.
 Di aplikasi ini juga ada error detection yang mana bila kita belum memasukkan data dengan lengkap maka akan keluar peringatan/tulisan tidak ada data dan isikan data terlebih dahulu.
